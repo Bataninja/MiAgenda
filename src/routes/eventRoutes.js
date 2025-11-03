@@ -16,7 +16,7 @@ router.get("/consultEvents", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
-router.get("/consultEvents/id", (req, res) => {
+router.get("/consultEvents/:id", (req, res) => {
     const { id } = req.params;
     eventSchema
         .findById(id)
