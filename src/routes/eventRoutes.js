@@ -24,4 +24,15 @@ router.get("/consultEvents/:id", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
+router.put("/editEvents/:id", (req, res) => {
+    const { id } = req.params;
+    const { nombre, descripcion, tipo, fechaInicio, fechaFin, recordatorio } = req.body;
+    eventSchema
+        .updateOne({ _id: id }, {
+            $set: { nombre, descripcion, tipo, fechaInicio, fechaFin, recordatorio, }
+        })
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
 module.exports = router;
