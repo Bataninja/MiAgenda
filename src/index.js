@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const eventRoutes = require("./routes/eventRoutes");
+const userRoutes = require("./routes/userRoutes");
+const cooperativoRoutes = require("./routes/cooperativoRoutes");
 const mongoose = require("mongoose");
 require('dotenv').config();
 
@@ -10,6 +12,8 @@ app.use(parser.urlencoded({ extended: false }));
 app.use(parser.json()); 
 
 app.use("/api", eventRoutes);
+app.use("/api", userRoutes);
+app.use("/api", cooperativoRoutes)
 app.use(express.json());
 mongoose
   .connect(process.env.MONGODB_URI)
