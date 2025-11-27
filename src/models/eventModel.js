@@ -22,6 +22,11 @@ const eventSchema = new mongoose.Schema({
     type: Date,
     required: false,
   },
+
+   cooperativo: {
+    type: Boolean,
+    default: false,
+  },
     recordatorio: {
     type: Boolean,
     default: false,
