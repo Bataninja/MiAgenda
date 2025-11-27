@@ -48,19 +48,6 @@ router.get("/consultEvents/:id", async (req, res) => {
   }
 });
 
-<<<<<<< Updated upstream
-router.put("/editEvents/:id", (req, res) => {
-    const { id } = req.params;
-    const { nombre, descripcion, tipo, fechaInicio, fechaFin, recordatorio } = req.body;
-    eventSchema
-        .updateOne({ _id: id }, {
-            $set: { nombre, descripcion, tipo, fechaInicio, fechaFin, recordatorio, }
-        })
-        .then((data) => res.json(data))
-        .catch((error) => res.json({ message: error }));
-});
-
-=======
 
 // ============================
 // ACTUALIZAR EVENTO
@@ -104,5 +91,4 @@ router.delete("/deleteEvent/:id", async (req, res) => {
 });
 
 
->>>>>>> Stashed changes
 module.exports = router;
